@@ -1,0 +1,64 @@
+@use "./colors.scss";
+@use "./fonts.scss";
+
+$mainWidth: 45rem;
+$mainPadding: 4rem;
+
+@mixin container {
+    margin: none;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContainer {
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.7));
+    width: $mainWidth;
+}
+
+.welcomeContainer {
+    @include container;
+
+    background: colors.$lightcream;
+
+    .title {
+        margin: 0.5rem 1rem;
+        font-weight: 500;
+    }
+
+    .coverImage {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.contentContainer {
+    @include container;
+    align-items: flex-start;
+    padding: 3rem;
+    
+    background: colors.$lightcream;
+
+    .textSection {
+        margin: 1rem 0;
+
+        h2 {
+            margin: 0.5rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .artistImage {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            float: left;
+            object-position: 0 -20px;
+
+            margin: 0 1rem 0 0;
+        }
+    }
+}

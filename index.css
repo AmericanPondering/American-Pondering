@@ -1,0 +1,24 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    background-color: #221e1c;
+    background-image: url('./src/assets/images/background.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+
+    margin: 1rem 0;
+
+    font-family: "BodoniModa";
+}
+
+@keyframes pageLoad {
+    from { translate: 0px -30px; opacity: 0; }
+    to { translate: 0px 0px; opacity: 1; }
+}

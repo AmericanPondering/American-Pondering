@@ -2,17 +2,24 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import classNames from "classnames"
 
 import * as copy from "../copy/components/list-form"
 
+import styles from "./ListForm.module.scss"
+import Seperator from "../assets/images/seperator.svg?react"
+
 export default function ListForm() {
-    return <div>
+    return <div className={styles.mainContainer}>
         <h1>{copy.header}</h1>
-        <hr />
-        <Form />
-        <hr />
-        <h2>{copy.infoHeader}</h2>
-        <pre>{copy.infoParagraph}</pre>
+        <Seperator className={styles.seperator} />
+        <div className={styles.contentContainer}>
+            <Form />
+            <div className={styles.textContainer}>
+                <h2>{copy.infoHeader}</h2>
+                <p>{copy.infoParagraph}</p>
+            </div>
+        </div>
     </div>;
 }
 
@@ -27,7 +34,7 @@ function Form() {
             (val) => val.length === 0 || /^(\+1\s?)?(\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4}$/.test(val),
             copy.invalidPhoneNumberError
         ),
-        questions: z.string().max(500)
+        questions: z.string().max(500, copy.stringTooLongError)
     });
 
     const {
@@ -63,32 +70,77 @@ function Form() {
     }
 
     return <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("fullName")} placeholder="Name (required)" />
-        {errors.fullName && <span>{errors.fullName.message}</span>}
+        <label className={styles.formField}>
+            <span className={styles.formLabel}>Name*</span>
+            <input
+                {...register("fullName")}
+                placeholder="Name (required)"
+                disabled={loading || responseJSON}
+                className={styles.formControl}
+            />
+            {errors.fullName && <span className={styles.errorMessage}>{errors.fullName.message}</span>}
+        </label>
 
-        <input {...register("email")} placeholder="Email (required)" />
-        {errors.email && <span>{errors.email.message}</span>}
 
-        <input {...register("phoneNumber")} placeholder="Phone number" />
-        {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
+        <label className={styles.formField}>
+            <span className={styles.formLabel}>Email*</span>
+            <input
+                {...register("email")}
+                placeholder="Email (required)"
+                disabled={loading || responseJSON}
+                className={styles.formControl}
+            />
+            {errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
+        </label>
 
-        <input {...register("questions")} placeholder="Questions" />
-        {errors.questions && <span>{errors.questions.message}</span>}
+        <label className={styles.formField}>
+            <span className={styles.formLabel}>Phone number</span>
+            <input
+                {...register("phoneNumber")}
+                placeholder="Phone number"
+                disabled={loading || responseJSON}
+                className={styles.formControl}
+            />
+            {errors.phoneNumber && <span className={styles.errorMessage}>{errors.phoneNumber.message}</span>}
+        </label>
+
+
+        <label className={styles.formField}>
+            <span className={styles.formLabel}>Questions</span>
+            <textarea
+                {...register("questions")}
+                placeholder="Questions"
+                disabled={loading || responseJSON}
+                className={styles.formControl}
+            />
+            {errors.questions && <span className={styles.errorMessage}>{errors.questions.message}</span>}
+        </label>
         
-        <button type="submit" disabled={loading || responseJSON?.result}>Submit</button>
-
-        {/* Response UI */}
-        {responseJSON && (responseJSON?.errCode ? <InterpretErrCode errCode={responseJSON.errCode} /> : <span>Information submitted</span>)}
+        <button
+            type="submit"
+            disabled={loading || responseJSON}
+            className={classNames({
+                    [styles.submitAnimation]: loading,
+                    [styles.submitSuccess]: responseJSON && !responseJSON?.errCode,
+                    [styles.submitError]: responseJSON && responseJSON?.errCode
+                },
+                styles.submitButton
+            )}
+        >{
+            responseJSON ?
+                (responseJSON?.errCode ? interpretErrCode(responseJSON.errCode): copy.reponseSuccess)
+                : "Submit"
+        }</button>
     </form>;
 }
 
-function InterpretErrCode({ errCode }) {
+function interpretErrCode(errCode) {
     switch (errCode) {
         case 1:
-            return <span>Something was wrong with your information.</span>;
+            return copy.reponseInvalidInfoError;
         case 2:
-            return <span>Something went wrong validating your information.</span>;
+            return copy.reponseValidationError;
         case 3:
-            return <span>Something went wrong adding your information to the list.</span>;
+            return copy.reponseAPIError;
     }
 }
