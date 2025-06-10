@@ -1,25 +1,55 @@
 import * as copy from "./copy/teaser-page"
 
-import ListForm from "./components/ListForm";
+import ListForm from "./components/ListForm"
+
+import styles from './App.module.scss'
+import IMAGES from './Images'
 
 function App() {
-  return <>
-    <h1>{copy.title}</h1>
-    {/* Cover img */}
-    <h2>{copy.introHeading}</h2>
-    <pre>{copy.introParagraph}</pre>
+  return (
+    <div className={styles.mainContainer}>
+      <div className={styles.welcomeContainer}>
+        <h1 className={styles.title}>{copy.title}</h1>
+        <img
+          src={IMAGES.coverImage}
+          alt="Cover image"
+          onLoad={() => document.querySelector("body").style.animation = "pageLoad 1s ease-out, 2s"}
+          className={styles.coverImage}
+        />
+      </div>
 
-    <ListForm />
+      <div className={styles.contentContainer}>
+        <div className={styles.textSection}>
+          <h2>{copy.introHeading}</h2>
+          <p>{copy.introParagraph}</p>
+        </div>
+      </div>
 
-    <h2>{copy.artistIntroHeading}</h2>
-    <pre>{copy.artistIntroParagraph}</pre>
+      <ListForm />
 
-    <h2>{copy.teaserHeading}</h2>
-    <pre>{copy.teaserParagraph}</pre>
+      <div className={styles.contentContainer}>
+        <div className={styles.textSection}>
+          <h2>{copy.artistIntroHeading}</h2>
+          <img
+            src={IMAGES.artist}
+            alt="Artist"
+            className={styles.artistImage}
+          />
+          <p>{copy.artistIntroParagraph}</p>
+        </div>
 
-    <h2>{copy.connectionHeading}</h2>
-    <pre>{copy.connectionParagraph}</pre>
-  </>;
+        <div className={styles.textSection}>
+          <h2>{copy.teaserHeading}</h2>
+          <p>{copy.teaserParagraph}</p>
+        </div>
+
+        <div className={styles.textSection}>
+          <h2>{copy.connectionHeading}</h2>
+          <p>{copy.connectionParagraph}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;

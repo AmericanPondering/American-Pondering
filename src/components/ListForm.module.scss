@@ -1,0 +1,164 @@
+@use "../colors.scss";
+@use "../fonts.scss";
+
+$transitionDuration: 0.3s;
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+
+    background-color: colors.$tintedlightcream;
+
+    h1, h2 {
+        margin: 0
+    }
+
+    .seperator {
+        height: 2px;
+        width: 100%
+    }
+
+    .contentContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+        .textContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 0 2rem;
+
+            position: relative;
+
+            .formField {
+                width: 100%;
+                position: relative;
+
+                .errorMessage {
+                    position: absolute;
+                    top: 0.3rem;
+                    right: 0;
+
+                    color: colors.$errorMessage;
+
+                    font-size: 0.7rem;
+                }
+            }
+
+            .formLabel {
+                display: block;
+            }
+
+            .formControl {
+                transition: $transitionDuration;
+
+                box-sizing: border-box;
+
+                width: 100%;
+                height: 1.5rem;
+                padding: 0 5px;
+                
+                border: none;
+                outline: none;
+                border-radius: 3px;
+
+                background-color: colors.$lightcream;
+
+                font-family: "Radley";
+
+                &::placeholder {
+                    opacity: 0.5;
+                }
+
+                &:focus {
+                    height: 2rem;
+                    background-color: colors.$whitecream;
+                }
+
+                &:disabled {
+                    height: 1.5rem;
+                    background-color: colors.$lightcream;
+                    opacity: 0.5;
+                }
+            }
+
+            .submitButton {
+                transition: $transitionDuration;
+
+                width: 100%;
+                height: 2rem;
+
+                border: none;
+                outline: none;
+                border-radius: 3px;
+
+                font-family: "Radley";
+                font-size: 1rem;
+
+                background-color: colors.$lightcream;
+
+                &:hover, &:focus {
+                    height: 2.5rem;
+                    background-color: colors.$whitecream;
+                }
+
+                &:active {
+                    font-size: 0.9rem;
+                }
+
+                &:disabled {
+                    height: 2rem;
+                    background-color: colors.$lightcream;
+                    font-size: 1rem;
+                }
+            }
+
+            .submitAnimation {
+                animation: loading 0.5s linear 0s infinite alternate;
+            }
+
+            .submitSuccess {
+                background-color: colors.$responseSuccess !important;
+            }
+
+            .submitError {
+                background-color: colors.$responseError !important;
+            }
+
+            textarea {
+                transition: $transitionDuration;
+
+                resize: none;
+
+                height: 3rem !important;
+
+                &:focus {
+                    height: 3.5rem !important;
+                    background-color: colors.$whitecream;
+                }
+            }
+        }
+    }
+}
+
+@keyframes loading {
+    0% { filter: brightness(100%); }
+    100% { filter: brightness(95%); }
+}
