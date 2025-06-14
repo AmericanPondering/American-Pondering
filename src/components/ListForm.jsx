@@ -16,8 +16,26 @@ export default function ListForm() {
         <div className={styles.contentContainer}>
             <Form />
             <div className={styles.textContainer}>
-                <h2>{copy.infoHeader}</h2>
                 <p>{copy.infoParagraph}</p>
+                <ul>
+                    <li>{copy.infoBullets[0]}</li>
+                    <li>{copy.infoBullets[1]}</li>
+                    <li>{copy.infoBullets[2]}</li>
+                    <li>{copy.infoBullets[3]}</li>
+                </ul>
+            </div>
+
+            <div className={styles.printInfoContainer}>
+                <h2>{copy.printInfoHeader}</h2>
+                <h3>{copy.printInfoSubheader}</h3>
+                <ul>
+                    <li>{copy.printInfoBullets[0]}</li>
+                    <li>{copy.printInfoBullets[1]}</li>
+                    <li>{copy.printInfoBullets[2]}</li>
+                    <li>{copy.printInfoBullets[3]}</li>
+                    <li>{copy.printInfoBullets[4]}</li>
+                    <li>{copy.printInfoBullets[5]}</li>
+                </ul>
             </div>
         </div>
     </div>;

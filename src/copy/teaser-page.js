@@ -1,13 +1,32 @@
 export const title = "Welcome to American Pondering";
 
-export const introHeading = "Honoring 250 Years of Service: A New Reflection Begins";
-export const introParagraph = "On June 14, 1775, the Continental Congress formed the United States Army — a force born not out of power, but of purpose. For 250 years, the Army has stood as a living promise: to defend liberty, uphold the Constitution, and serve with honor.\n\nThis year, as the nation commemorates a quarter-millennium of that legacy, a new artistic series quietly emerges: American Pondering™.\n\nSet for its inaugural release on this historic anniversary, American Pondering™ is more than a collection of paintings — it is a meditative journey through the moral weight, internal struggle, and timeless vision carried by those who shaped our nation's course. It begins with a silent tribute — not to battles, but to the burden of leadership and the still moments before action.\n\nWhile the image itself remains unrevealed, its soul echoes the founding heartbeat of the Army — the humility, duty, and resolve of America's first commander-in-chief, and the visionaries who followed. This project does not seek to dramatize history but to give it quiet voice.\n\nAs the Army turns 250, American Pondering™ invites you to reflect, remember, and re-engage with the spirit that still calls us to serve something greater than ourselves.\n\nFrom foundation to future — a nation worth pondering.";
+export const landing_paragraph = "Where history reflects. Where conviction meets canvas. Welcome to American Pondering™ — a fine art series exploring the spirit of America's founding and the timeless questions that shaped its leaders.";
 
-export const artistIntroHeading = "Kevin Petrocelli - Creator of American Pondering™";
-export const artistIntroParagraph = "Kevin Petrocelli is a career law enforcement leader, lifelong public servant, and passionate student of American history. With decades of experience serving communities and leading with integrity, Kevin brings a unique depth of perspective to his creative pursuits — combining his background in leadership with a reverence for the foundational ideas that shaped the nation.\n\nHe is the creator of American Pondering™, an emerging fine art and narrative series that explores the quiet strength, internal reflection, and enduring legacy of America's most formative figures and moments. What began as a single, inspired image has grown into a larger vision: a body of work that will evolve over time — honoring the character, sacrifice, and spirit of those who helped shape the nation.\n\nRooted in personal reflection and sparked by a visit to George Washington's Mount Vernon in 2010, Kevin's journey with American Pondering™ is just beginning. Each release will build on the last, contributing to a growing tribute that spans from Foundation to Future™.\n\nHis work invites Americans not just to remember history — but to ponder what it asks of us today.";
+export const debut_heading = "US American Pondering™ Unveils First Fine Art Release Commemorating 250 Years of U.S. Army History";
+export const debut_subheading = "Ponder at the Potomac Debuts June 14, 2025";
+export const debut_paragraph1 = [
+    "MOUNT VERNON, VA",
+    "— On the 250th Anniversary of the United States Army, artist and founder Kevin Petrocelli proudly announces the launch of Ponder at the Potomac, the first release in the American Pondering™ fine art series. This historically inspired body of work explores the inner reflections of America's founding leaders, beginning with a powerful depiction of General George Washington in May 1775 — the moment before history turned."
+];
+export const debut_paragraph2 = "Executed in the style of Classical Realism and informed by rigorous historical research, Ponder at the Potomac captures Washington and his horse, Blueskin, in a quiet moment of contemplation on the banks of the Potomac River. The Mount Vernon estate looms subtly in the background, anchoring the scene in place and time — just before Washington departed to attend the Second Continental Congress and ultimately accept command of the Continental Army.";
+export const debut_paragraph3 = [ 
+    "\"Before orders were given, before titles were earned, he stood and pondered the weight of a nation not yet born,\"",
+    " says Petrocelli. ",
+    "\"American Pondering™ invites viewers to step into that moment — and reflect on the enduring cost and character of true leadership.\""
+];
+export const debut_paragraph4 = [
+    "Ponder at the Potomac is available as a ",
+    "limited edition fine art print, ",
+    "each one hand-signed by the artist and accompanied by a certificate of authenticity. Framing options are available upon request. The release also marks the beginning of a national fine art campaign by American Pondering™, with future works planned through 2026 to coincide with the 250th anniversary of the United States."
+];
+export const debut_paragraph5 = "With a focus on storytelling through historical accuracy and emotional depth, American Pondering™ aims to inspire viewers to pause, reflect, and reconnect with the foundational values of American leadership and legacy."
 
-export const teaserHeading = "The Silence Before the Reveal";
-export const teaserParagraph = "Something thoughtful is stirring. A shadow at dawn. A quill poised in hand. A reflection held longer than usual.\n\nAmerican Pondering is a new fine art series that captures the quiet moments of American leaders as they consider the weight of liberty, unity, and sacrifice.\n\nNo full reveals. Not yet. But the first subject is waiting to meet the public. Coming June 14th.";
+export const artistIntro_heading = "Kevin Petrocelli - Creator of American Pondering™";
+export const artistIntro_paragraph = "Kevin Petrocelli is a career law enforcement leader, lifelong public servant, and passionate student of American history. With decades of experience serving communities and leading with integrity, Kevin brings a unique depth of perspective to his creative pursuits — combining his background in leadership with a reverence for the foundational ideas that shaped the nation.\n\nHe is the creator of American Pondering™, an emerging fine art and narrative series that explores the quiet strength, internal reflection, and enduring legacy of America's most formative figures and moments. What began as a single, inspired image has grown into a larger vision: a body of work that will evolve over time — honoring the character, sacrifice, and spirit of those who helped shape the nation.\n\nRooted in personal reflection and sparked by a visit to George Washington's Mount Vernon in 2010, Kevin's journey with American Pondering™ is just beginning. Each release will build on the last, contributing to a growing tribute that spans from Foundation to Future™.\n\nHis work invites Americans not just to remember history — but to ponder what it asks of us today.";
 
-export const connectionHeading = "Anniversary Connection: 250 Years of Reflection";
-export const connectionParagraph = "2025 marks the 250th anniversary of the United States Army—a legacy of service, strength, and sacrifice.\n\nThe first release of American Pondering honors this moment. Without showing his full portrait just yet, our opening figure reflects the burden of command and the quiet strength of early American leadership.\n\nThis series aims to bring 250 stories to life, starting where the Army began: in 1775, with a commander who set the tone for a new republic.\n\nPrepare for a soft launch that honors the Army's past while hinting at the visual legacy to come.";
+export const contactInfo = [
+    "For press inquiries, pre-orders, or media kits, please contact:",
+    "admin@americanpondering.com",
+    "or visit ",
+    "www.americanpondering.com"
+];
