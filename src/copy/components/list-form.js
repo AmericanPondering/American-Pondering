@@ -1,7 +1,23 @@
-export const header = "Join The List";
+export const header = "Reserve a print";
 
-export const infoHeader = "What Am I Joining?";
-export const infoParagraph = "By joining the list, you will receive imporatnt updates regarding the release of each artwork and more information pertaining to purchase and shipping details. Note that joining the list does not obligate you to buy any artwork. Only join if you are interested in what the artwork looks like, and how much it costs. (We'll email you these details in the coming weeks)";
+export const infoParagraph = "By reserving a limited edition print from American Pondering™, you're joining a national reflection on courage, legacy, and the founding spirit of America.";
+export const infoBullets = [
+    "Support a new fine art series honoring American leadership",
+    "Own a powerful, historically grounded image of Washington",
+    "Mark the 250th anniversary of the U.S. with a lasting collectible",
+    "Join a community of patriots, collectors, and truth-seekers"
+];
+
+export const printInfoHeader = "Limited Edition Details";
+export const printInfoSubheader = "Ponder at the Potomac - Collector's Print";
+export const printInfoBullets = [
+    ["Size: ", "24 x 36 inches"],
+    ["Finish: ", "Textured, painterly surface"],
+    ["Edition: ", "Limited to 50 hand-signed prints"],
+    ["Certificate: ", "Included with each order"],
+    ["Price: ", "$650"],
+    ["Framing: ", "Available upon request"],
+];
 
 export const nameRequiredError = "Name required";
 export const emailRequiredError = "Email required";

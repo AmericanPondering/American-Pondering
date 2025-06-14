@@ -3,8 +3,14 @@
 
 $mainWidth: 45rem;
 $mainPadding: 4rem;
+$transitionDuration: 0.3s;
 
-@mixin container {
+.mainContainer {
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.7));
+    width: $mainWidth;
+}
+
+@mixin alignCenter {
     margin: none;
     
     display: flex;
@@ -12,32 +18,39 @@ $mainPadding: 4rem;
     align-items: center;
 }
 
-.mainContainer {
-    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.7));
-    width: $mainWidth;
-}
-
 .welcomeContainer {
-    @include container;
+    @include alignCenter;
 
     background: colors.$lightcream;
 
     .title {
         margin: 0.5rem 1rem;
-        font-weight: 500;
+    }
+
+    .landingParagraph {
+        margin: 0 3rem 1rem 3rem;
+        text-align: center;
+        font-style: italic;
     }
 
     .coverImage {
         width: 100%;
         height: auto;
+
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        pointer-events: none;
     }
 }
 
 .contentContainer {
-    @include container;
+    @include alignCenter;
     align-items: flex-start;
     padding: 3rem;
-    
+
     background: colors.$lightcream;
 
     .textSection {
@@ -45,6 +58,20 @@ $mainPadding: 4rem;
 
         h2 {
             margin: 0.5rem;
+        }
+
+        h3 {
+            margin: 0.5rem;
+
+            font-style: italic;
+            text-align: center;
+            font-weight: 400;
+
+            opacity: 0.6;
+        }
+
+        em {
+            color: colors.$quotes;
         }
 
         p {
@@ -60,5 +87,69 @@ $mainPadding: 4rem;
 
             margin: 0 1rem 0 0;
         }
+    }
+}
+
+.readMoreContainerCollapsed {
+    @extend .contentContainer;
+
+    overflow: hidden;
+
+    position: relative;
+
+    &::before {
+        content: "";
+        
+        width: 100%;
+        height: 15rem;
+        
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        
+        background: colors.$lightcream;
+        background: linear-gradient(
+            0deg,
+            rgba(colors.$lightcream, 1) 0%,
+            rgba(colors.$lightcream, 1) 15%,
+            rgba(colors.$lightcream, 0) 100%
+        );
+    }
+
+    .readMoreButton {
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        
+        width: 10rem;
+
+        font-family: 'BodoniModa';
+        font-size: 1rem;
+        text-align: center;
+
+        background-color: colors.$tintedlightcream;
+        border: none;
+
+        transition: $transitionDuration;
+
+        &:hover {
+            background-color: colors.$whitecream;
+        }
+    }
+}
+
+.readMoreContainerExpanded {
+    @extend .readMoreContainerCollapsed;
+
+    height: auto;
+
+    &::before {
+        opacity: 0;
+    }
+
+    .readMoreButton {
+        opacity: 0;
     }
 }
