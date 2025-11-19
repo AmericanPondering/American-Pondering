@@ -15,7 +15,6 @@ export const printInfoBullets = [
     ["Finish: ", "Textured, painterly surface"],
     ["Edition: ", "Limited to 50 hand-signed prints"],
     ["Certificate: ", "Included with each order"],
-    ["Price: ", "$650"],
     ["Framing: ", "Available upon request"],
 ];
 

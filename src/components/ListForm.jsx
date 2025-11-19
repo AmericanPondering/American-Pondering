@@ -34,7 +34,6 @@ export default function ListForm() {
                     <li>{copy.printInfoBullets[2]}</li>
                     <li>{copy.printInfoBullets[3]}</li>
                     <li>{copy.printInfoBullets[4]}</li>
-                    <li>{copy.printInfoBullets[5]}</li>
                 </ul>
             </div>
         </div>
